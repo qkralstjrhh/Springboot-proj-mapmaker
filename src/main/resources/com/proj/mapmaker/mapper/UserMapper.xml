@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.proj.mapmaker.mapper.UserMapper">
+
+    <select id="kakaoUserChk" parameterType="KakaoDTO" resultType="int">
+        SELECT COUNT(*) FROM USER WHERE kakaoId = #{kakaoId}
+
+    </select>
+
+    <select id="kakaoLogin" parameterType="KakaoDTO" resultType="UserDTO">
+        SELECT * FROM USER WHERE kakaoId = #{kakaoId}
+    </select>
+
+    <insert id="insertByKakaoUser" parameterType="KakaoDTO">
+        INSERT INTO USER (kakaoId, userNick, loginType)
+        VALUES(#{kakaoId}, #{userNick}, 'kakao')
+    </insert>
+
+</mapper>
