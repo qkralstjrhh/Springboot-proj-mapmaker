@@ -19,4 +19,17 @@
         VALUES(#{kakaoId}, #{userNick}, 'kakao')
     </insert>
 
+    <select id="generalLogin" parameterType="java.util.HashMap" resultType="UserDTO">
+<!--        SELECT * FROM user WHERE userId = #{userId} AND userPw =#{userPw}  -->
+        SELECT * FROM user
+        <where>
+            <if test="userId != null">
+                AND userId = #{userId}
+            </if>
+            <if test="userPw != null">
+                AND userPw = #{userPw}
+            </if>
+        </where>
+    </select>
+
 </mapper>

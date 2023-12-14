@@ -5,6 +5,8 @@ import com.proj.mapmaker.user.model.UserDTO;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
+import java.util.HashMap;
+
 @Repository
 @Mapper
 public interface UserMapper {
@@ -15,4 +17,5 @@ public interface UserMapper {
 
     public void insertByKakaoUser(KakaoDTO kakaoDTO);
 
+    public UserDTO generalLogin(HashMap<String,String> logFrm);
 }

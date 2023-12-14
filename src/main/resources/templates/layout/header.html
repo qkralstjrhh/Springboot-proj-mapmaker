@@ -41,7 +41,6 @@
         <!-- 네비게이션 메뉴 -->
         <div class="container-md collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mr-auto">
-                <p th:text="${session}"></p>
                 <li class="nav-item">
                     <a class="nav-link" href="/">홈</a>
                 </li>
@@ -52,13 +51,13 @@
                     <a class="nav-link" href="#">핀 추가</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">찜 목록</a>
+                    <a class="nav-link" href="/example">찜 목록</a>
                 </li>
                 <li class="nav-item">
-                    <div th:if="${userDTO == null}">
+                    <div th:if="${session.user == null}">
                         <a class="nav-link" href="/login">로그인</a>
                     </div>
-                    <div th:unless="${userDTO == null}">
+                    <div th:unless="${session.user == null}">
                         <a class="nav-link" href="/logout">로그아웃</a>
                     </div>
                 </li>

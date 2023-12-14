@@ -5,20 +5,20 @@ public class UserDTO {
 
     long uId;
     long kakaoId;
-    String mmId;
-    String mmPw;
+    String userId;
+    String userPw;
     String userNick;
     String loginType;
 
     @Override
     public String toString() {
-        return "UserVo{" +
+        return "UserDTO{" +
                 "uId=" + uId +
                 ", kakaoId=" + kakaoId +
-                ", mmId='" + mmId + '\'' +
-                ", mmPw='" + mmPw + '\'' +
+                ", userId='" + userId + '\'' +
+                ", userPw='" + userPw + '\'' +
                 ", userNick='" + userNick + '\'' +
-                ", login_type='" + loginType + '\'' +
+                ", loginType='" + loginType + '\'' +
                 '}';
     }
 
@@ -38,20 +38,20 @@ public class UserDTO {
         this.kakaoId = kakaoId;
     }
 
-    public String getMmId() {
-        return mmId;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setMmId(String mmId) {
-        this.mmId = mmId;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
-    public String getMmPw() {
-        return mmPw;
+    public String getUserPw() {
+        return userPw;
     }
 
-    public void setMmPw(String mmPw) {
-        this.mmPw = mmPw;
+    public void setUserPw(String userPw) {
+        this.userPw = userPw;
     }
 
     public String getUserNick() {

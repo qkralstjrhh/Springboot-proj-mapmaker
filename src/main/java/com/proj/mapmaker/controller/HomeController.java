@@ -5,20 +5,31 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpSession;
 
 @Controller
 public class HomeController {
 
     private final Logger logger = LoggerFactory.getLogger(HomeController.class.getName());
     @GetMapping("/")
-    public String home(Model model){
-        model.addAttribute("data", "데이터@@");
-        return "home";
+    public ModelAndView home(ModelAndView model, HttpSession session){
+        model.setViewName("home");
+        return model;
     }
     @GetMapping("/header")
     public String header(Model model) {
 
         return "/layout/header";
+    }
+
+    @GetMapping("/example")
+    public ModelAndView example(ModelAndView mav){
+
+        mav.setViewName("/example");
+
+        return mav;
     }
 
 }
